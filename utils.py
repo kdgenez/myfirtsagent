@@ -1,5 +1,3 @@
-**utils.py**
-```python
 from __future__ import annotations
 from typing import List, Optional
 import ast, operator as op
@@ -43,6 +41,3 @@ def available_tools(use_tavily: bool, use_calculator: bool, tavily_api_key: Opti
 def build_agent(llm: BaseChatModel, tools: List[Tool], system_prompt: str) -> AgentExecutor:
     prompt = ChatPromptTemplate.from_messages([("system", system_prompt), MessagesPlaceholder("chat_history", optional=True), ("human", "{input}"), ("system", "Piensa paso a paso.")])
     return AgentExecutor(agent=create_react_agent(llm=llm, tools=tools, prompt=prompt), tools=tools, verbose=False, handle_parsing_errors=True)
-```
-
----
