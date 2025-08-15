@@ -58,6 +58,3 @@ if user_input:
                 output_text = f"⚠️ Error: {e}"
             st.markdown(output_text)
             st.session_state.messages.append(AIMessage(content=output_text))
-```
-
----
